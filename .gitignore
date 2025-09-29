@@ -1,0 +1,15 @@
+# Recreate the .gitignore file with the correct path
+echo "# Ignore data files
+data/
+mimic-iv*/
+*.csv
+*.csv.gz
+*.parquet
+
+# Ignore system files
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.vscode/
+.ipynb_checkpoints/" > .gitignore
