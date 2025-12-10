@@ -189,7 +189,10 @@ def create_comparison_plot(all_results, output_dir):
     models = all_results['Model'].unique()
     n_models = len(models)
     
-    fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+    # Dynamic grid for any number of models
+    n_cols = 5
+    n_rows = (n_models + n_cols - 1) // n_cols
+    fig, axes = plt.subplots(n_rows, n_cols, figsize=(20, 4*n_rows))
     axes = axes.ravel()
     
     colors = {'Sensitivity': '#E74C3C', 'Specificity': '#3498DB'}
@@ -217,9 +220,9 @@ def create_comparison_plot(all_results, output_dir):
         ax.set_ylim(0, 1)
         ax.grid(True, alpha=0.3)
     
-    # Hide empty subplot if odd number of models
-    if n_models < 6:
-        axes[5].axis('off')
+    # Hide empty subplots
+    for idx in range(n_models, len(axes)):
+        axes[idx].axis('off')
     
     plt.suptitle('Sensitivity vs Specificity Across Decision Thresholds\nBy Model', 
                  fontsize=16, fontweight='bold', y=1.02)
@@ -391,7 +394,10 @@ def create_f1_ppv_npv_plot(all_results, output_dir):
     models = all_results['Model'].unique()
     n_models = len(models)
     
-    fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+    # Dynamic grid for any number of models
+    n_cols = 5
+    n_rows = (n_models + n_cols - 1) // n_cols
+    fig, axes = plt.subplots(n_rows, n_cols, figsize=(20, 4*n_rows))
     axes = axes.ravel()
     
     for idx, model in enumerate(models):
@@ -418,8 +424,9 @@ def create_f1_ppv_npv_plot(all_results, output_dir):
         ax.set_ylim(0, 1)
         ax.grid(True, alpha=0.3)
     
-    if n_models < 6:
-        axes[5].axis('off')
+    # Hide empty subplots
+    for idx in range(n_models, len(axes)):
+        axes[idx].axis('off')
     
     plt.suptitle('F1 Score, PPV, and NPV Across Decision Thresholds', 
                  fontsize=16, fontweight='bold', y=1.02)
@@ -483,8 +490,8 @@ def main():
     # Load data
     X_train, y_train, X_test, y_test, features = load_data()
     
-    # Get top 5 models
-    top_models = get_top_models(n=5)
+    # Get all 10 models
+    top_models = get_top_models(n=10)
     
     # Define thresholds to test
     thresholds = np.arange(0.05, 0.95, 0.05)
