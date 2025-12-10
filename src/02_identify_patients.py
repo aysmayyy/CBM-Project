@@ -271,6 +271,6 @@ def main():
     print(final_cohort['los'].describe())
 
 if __name__ == "__main__":
-    main() 
- 
+    main()
+
 

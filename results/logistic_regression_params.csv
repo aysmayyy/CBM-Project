@@ -1,2 +1,2 @@
 C,penalty,solver
-1,l2,lbfgs
+100,l2,lbfgs

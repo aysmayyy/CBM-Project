@@ -63,7 +63,7 @@ def decision_curve_analysis(y_true, y_pred_proba, threshold_range=None):
         nb_none = 0
         
         net_benefit_model.append(nb_model)
-        net_benefit_all.append(max(nb_all, 0))
+        net_benefit_all.append(nb_all)
         net_benefit_none.append(nb_none)
     
     return threshold_range, net_benefit_model, net_benefit_all, net_benefit_none

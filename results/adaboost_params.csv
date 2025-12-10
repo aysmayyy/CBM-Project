@@ -1,2 +1,2 @@
 learning_rate,n_estimators
-1.0,200
+0.1,200

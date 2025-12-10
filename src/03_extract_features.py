@@ -836,16 +836,16 @@ comorbid_cols = ['myocardial_infarction', 'congestive_heart_failure',
                  'diabetes_with_cc', 'paraplegia', 'renal_disease', 'malignant_cancer',
                  'severe_liver_disease', 'metastatic_solid_tumor', 'aids']
 comorbid_cols = [c for c in comorbid_cols if c in final_data.columns]    
-    print(f"  Vital signs: {len(vital_cols)} features")
-    print(f"  Lab tests: {len(lab_cols)} features")
-    print(f"  Comorbidities: {len(comorbid_cols)} features")
-    print(f"  Scores: GCS, SOFA, Charlson")
-    print(f"  Other: Demographics, weight, urine output, mechanical ventilation")
+print(f"  Vital signs: {len(vital_cols)} features")
+print(f"  Lab tests: {len(lab_cols)} features")
+print(f"  Comorbidities: {len(comorbid_cols)} features")
+print(f"  Scores: GCS, SOFA, Charlson")
+print(f"  Other: Demographics, weight, urine output, mechanical ventilation")
     
-    print(f"\n{'='*70}")
-    print("Next step: Run 04_preprocess_features.py")
-    print("This will handle missing values, feature selection, and encoding")
-    print("="*70)
+print(f"\n{'='*70}")
+print("Next step: Run 04_preprocess_features.py")
+print("This will handle missing values, feature selection, and encoding")
+print("="*70)
 
 if __name__ == "__main__":
     main()
