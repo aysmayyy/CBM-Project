@@ -1,2 +1,2 @@
 activation,alpha,hidden_layer_sizes,learning_rate
-relu,0.001,"(100, 50)",constant
+relu,0.0001,"(100, 50)",constant
