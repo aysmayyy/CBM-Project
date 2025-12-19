@@ -8,6 +8,7 @@ import sys
 import os
 from pathlib import Path
 
+
 def remove_null_bytes(file_path):
     """Remove null bytes from a single file"""
     try:
@@ -35,6 +36,7 @@ def remove_null_bytes(file_path):
     except Exception as e:
         print(f"✗ {file_path} - Error: {e}")
         return False
+
 
 def process_path(path):
     """Process a file or directory"""
@@ -65,6 +67,7 @@ def process_path(path):
         
         print(f"\nProcessed {success_count}/{len(python_files)} files successfully")
 
+
 def main():
     if len(sys.argv) < 2:
         print("Usage: python fix_null_bytes.py <file_or_directory>")
@@ -77,6 +80,7 @@ def main():
     path = sys.argv[1]
     print(f"=== NULL BYTE REMOVER ===\n")
     process_path(path)
+
 
 if __name__ == "__main__":
     main()

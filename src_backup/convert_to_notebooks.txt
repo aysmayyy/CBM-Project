@@ -7,6 +7,7 @@ import json
 import os
 import re
 
+
 def py_to_notebook(py_file, output_dir=None):
     """Convert a .py file to .ipynb notebook"""
     
@@ -92,6 +93,7 @@ def py_to_notebook(py_file, output_dir=None):
     return output_path
 
 
+
 def convert_all(input_dir, output_dir):
     """Convert all .py files in a directory"""
     
@@ -104,6 +106,7 @@ def convert_all(input_dir, output_dir):
         py_to_notebook(full_path, output_dir)
     
     print(f"\n✓ Done! Notebooks saved to: {output_dir}")
+
 
 
 if __name__ == "__main__":
